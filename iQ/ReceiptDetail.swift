@@ -16,8 +16,7 @@ class ReceiptDetail: iQTableViewController {
             fields.append("Accommodation Included", type: .Switch, value: true, required: false)
             fields.append("Dining Included", type: .Switch, value: true, required: false)
             fields.append("Currency", type: .Segmented, options: ["GBP", "EUR"], required: true)
-            fields.append("Amount", type: .Money, required: false)
-            fields.append("Our Reference Number", type: .NumericText, required: false)
+            fields.append("Amount", type: .NumericText, required: false)
         }
         super.init(fields: fields)
         if receipt != nil { self.receipt = receipt }

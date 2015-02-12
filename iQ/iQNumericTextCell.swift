@@ -16,7 +16,7 @@ class iQNumericTextCell: iQTextCell {
         super.init(style: .Default, reuseIdentifier: reuseIdentifier)
         self.textField.autocorrectionType = .No
         self.textField.autocapitalizationType = .None
-        self.textField.keyboardType = UIKeyboardType.NumbersAndPunctuation
+        self.textField.keyboardType = UIKeyboardType.NumberPad
     }
     
     required init(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }

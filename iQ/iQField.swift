@@ -1,7 +1,7 @@
 import UIKit
 
 enum iQFieldType: Int {
-    case Text, Email, NumericText, Money
+    case Text, Email, NumericText
     case Segmented
     case Switch
 }
