@@ -26,6 +26,11 @@ class iQCell: UITableViewCell {
         self.label.textColor = self.tintColor
     }
     
+    func removeConstraints()
+    {
+        self.contentView.removeConstraints( self.contentView.constraints() )
+    }
+    
     func addVisualConstraint(format: String) {
         self.contentView.addConstraints(NSLayoutConstraint
             .constraintsWithVisualFormat(format,

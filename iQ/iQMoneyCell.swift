@@ -18,6 +18,11 @@ class iQMoneyCell: iQTextCell {
         self.textField.autocapitalizationType = .None
         self.textField.keyboardType = UIKeyboardType.NumbersAndPunctuation
         self.textField.textAlignment = NSTextAlignment.Right
+        
+        self.removeConstraints()
+        self.addVisualConstraint("V:|-[label]-|")
+        self.addVisualConstraint("V:|-[field]-|")
+        self.addVisualConstraint("H:|-[label]-[field(==label)]-|")
     }
     
     required init(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
