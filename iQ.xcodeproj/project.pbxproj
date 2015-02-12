@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2994A1C51A8CF9DF00C4EF98 /* iQNumericTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2994A1C41A8CF9DF00C4EF98 /* iQNumericTextCell.swift */; };
 		8F18575E1A8D0A650034F0A2 /* iQMoneyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F18575D1A8D0A650034F0A2 /* iQMoneyCell.swift */; };
+		8F18575F1A8D15230034F0A2 /* iQField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE5D0431A8B55D800BEB43F /* iQField.swift */; };
 		8FE5D0261A8B554400BEB43F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FE5D0251A8B554400BEB43F /* Images.xcassets */; };
 		8FE5D0291A8B554500BEB43F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FE5D0271A8B554500BEB43F /* LaunchScreen.xib */; };
 		8FE5D0351A8B554700BEB43F /* iQTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE5D0341A8B554700BEB43F /* iQTests.swift */; };
@@ -265,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F18575F1A8D15230034F0A2 /* iQField.swift in Sources */,
 				8FE5D0351A8B554700BEB43F /* iQTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

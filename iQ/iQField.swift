@@ -46,6 +46,8 @@ class iQField: NSObject, NSCoding {
     private var _options: [String]?
     var options: [String]? { get { return self._options } }
     
+    class func EMAIL_REGEX() -> String { return "^\\s*[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]+\\s*$" }
+    
     func validate() -> Bool {
         var isValid: Bool = true
         if self.value == nil {
@@ -54,7 +56,7 @@ class iQField: NSObject, NSCoding {
         else {
             println("has value")
             if self._type == .Email {
-                let regEx: String = "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}$"
+                let regEx: String = iQField.EMAIL_REGEX()
                 if !(NSPredicate(format: "SELF MATCHES %@", regEx)!.evaluateWithObject(self.value! as String)) {
                     isValid = false
                 }
