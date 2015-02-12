@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2994A1C51A8CF9DF00C4EF98 /* iQNumericTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2994A1C41A8CF9DF00C4EF98 /* iQNumericTextCell.swift */; };
+		8F18575E1A8D0A650034F0A2 /* iQMoneyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F18575D1A8D0A650034F0A2 /* iQMoneyCell.swift */; };
 		8FE5D0261A8B554400BEB43F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FE5D0251A8B554400BEB43F /* Images.xcassets */; };
 		8FE5D0291A8B554500BEB43F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FE5D0271A8B554500BEB43F /* LaunchScreen.xib */; };
 		8FE5D0351A8B554700BEB43F /* iQTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE5D0341A8B554700BEB43F /* iQTests.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		2994A1C41A8CF9DF00C4EF98 /* iQNumericTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iQNumericTextCell.swift; sourceTree = "<group>"; };
+		8F18575D1A8D0A650034F0A2 /* iQMoneyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iQMoneyCell.swift; sourceTree = "<group>"; };
 		8FE5D0161A8B553E00BEB43F /* iQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FE5D01A1A8B554000BEB43F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FE5D0251A8B554400BEB43F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				8FE5D0471A8B55D800BEB43F /* iQTextCell.swift */,
 				8FE5D0421A8B55D800BEB43F /* iQEmailCell.swift */,
 				2994A1C41A8CF9DF00C4EF98 /* iQNumericTextCell.swift */,
+				8F18575D1A8D0A650034F0A2 /* iQMoneyCell.swift */,
 				8FE5D0441A8B55D800BEB43F /* iQSegmentedCell.swift */,
 				8FE5D0451A8B55D800BEB43F /* iQSwitch.swift */,
 				8FE5D0461A8B55D800BEB43F /* iQTableViewController.swift */,
@@ -245,6 +248,7 @@
 				8FE5D04C1A8B55D800BEB43F /* iQField.swift in Sources */,
 				8FE5D03F1A8B55AE00BEB43F /* AppDelegate.swift in Sources */,
 				8FE5D0531A8B570700BEB43F /* ReceiptObjectModel.swift in Sources */,
+				8F18575E1A8D0A650034F0A2 /* iQMoneyCell.swift in Sources */,
 				8FE5D0501A8B55D800BEB43F /* iQTextCell.swift in Sources */,
 				8FE5D04A1A8B55D800BEB43F /* iQCell.swift in Sources */,
 				8FE5D04F1A8B55D800BEB43F /* iQTableViewController.swift in Sources */,

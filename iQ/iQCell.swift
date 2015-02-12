@@ -32,6 +32,11 @@ class iQCell: UITableViewCell {
             views: self.viewsDictionary))
     }
     
+    func removeConstraints()
+    {
+        self.contentView.removeConstraints( self.contentView.constraints() )
+    }
+    
     private var _field: iQField?
     func assignField(inout field: iQField, showValidationErrors: Bool) {
         self._field = field
