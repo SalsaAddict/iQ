@@ -21,6 +21,7 @@ class iQTableViewController: UITableViewController {
         self.tableView.registerClass(iQEmailCell.self, forCellReuseIdentifier: iQEmailCell.reuseIdentifier)
         self.tableView.registerClass(iQSegmentedCell.self, forCellReuseIdentifier: iQSegmentedCell.reuseIdentifier)
         self.tableView.registerClass(iQSwitchCell.self, forCellReuseIdentifier: iQSwitchCell.reuseIdentifier)
+        self.tableView.registerClass(iQNumericTextCell.self, forCellReuseIdentifier: iQNumericTextCell.reuseIdentifier)
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,6 +34,7 @@ class iQTableViewController: UITableViewController {
         switch field.type {
         case .Text: cell = tableView.dequeueReusableCellWithIdentifier(iQTextCell.reuseIdentifier, forIndexPath: indexPath) as iQTextCell
         case .Email: cell = tableView.dequeueReusableCellWithIdentifier(iQEmailCell.reuseIdentifier, forIndexPath: indexPath) as iQEmailCell
+        case .NumericText: cell = tableView.dequeueReusableCellWithIdentifier(iQNumericTextCell.reuseIdentifier, forIndexPath: indexPath) as iQNumericTextCell
         case .Segmented: cell = tableView.dequeueReusableCellWithIdentifier(iQSegmentedCell.reuseIdentifier, forIndexPath: indexPath) as iQSegmentedCell
         case .Switch: cell = tableView.dequeueReusableCellWithIdentifier(iQSwitchCell.reuseIdentifier, forIndexPath: indexPath) as iQSwitchCell
         default: abort() // TODO: Remove
