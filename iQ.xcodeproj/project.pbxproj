@@ -106,13 +106,13 @@
 				8FE5D0411A8B55D800BEB43F /* iQCell.swift */,
 				8FE5D0471A8B55D800BEB43F /* iQTextCell.swift */,
 				8FE5D0421A8B55D800BEB43F /* iQEmailCell.swift */,
+				2994A1C41A8CF9DF00C4EF98 /* iQNumericTextCell.swift */,
 				8FE5D0441A8B55D800BEB43F /* iQSegmentedCell.swift */,
 				8FE5D0451A8B55D800BEB43F /* iQSwitch.swift */,
 				8FE5D0461A8B55D800BEB43F /* iQTableViewController.swift */,
 				8FE5D0251A8B554400BEB43F /* Images.xcassets */,
 				8FE5D0271A8B554500BEB43F /* LaunchScreen.xib */,
 				8FE5D0191A8B553F00BEB43F /* Supporting Files */,
-				2994A1C41A8CF9DF00C4EF98 /* iQNumericTextCell.swift */,
 			);
 			path = iQ;
 			sourceTree = "<group>";

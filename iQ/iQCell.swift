@@ -21,7 +21,6 @@ class iQCell: UITableViewCell {
     required init(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 
     override func prepareForReuse() {
-        println("prepeareFroReuse")
         self.label.text = nil
         self.label.textColor = self.tintColor
     }
@@ -37,7 +36,7 @@ class iQCell: UITableViewCell {
     func assignField(inout field: iQField, showValidationErrors: Bool) {
         self._field = field
         self.label.text = field.label
-        if showValidationErrors && field.required && (field.value == nil) {
+        if showValidationErrors && !field.validate() {
             self.label.textColor = UIColor.redColor()
         }
         else {

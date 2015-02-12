@@ -47,7 +47,20 @@ class iQField: NSObject, NSCoding {
     var options: [String]? { get { return self._options } }
     
     func validate() -> Bool {
-        if self._required && self.value == nil { return false } else { return true }
+        var isValid: Bool = true
+        if self.value == nil {
+            if self._required { isValid = false }
+        }
+        else {
+            println("has value")
+            if self._type == .Email {
+                let regEx: String = "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}$"
+                if !(NSPredicate(format: "SELF MATCHES %@", regEx)!.evaluateWithObject(self.value! as String)) {
+                    isValid = false
+                }
+            }
+        }
+        return isValid
     }
     
 }
