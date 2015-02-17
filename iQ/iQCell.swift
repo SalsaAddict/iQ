@@ -50,7 +50,7 @@ class iQCell: UITableViewCell {
     }
 
     func setFieldValue(value: AnyObject?) {
-        self._field?.value = value?
+        self._field?.value = value
     }
     
 }

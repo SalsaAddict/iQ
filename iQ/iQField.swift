@@ -9,11 +9,11 @@ enum iQFieldType: Int {
 class iQField: NSObject, NSCoding {
     
     required init(coder aDecoder: NSCoder) {
-        self._label = aDecoder.decodeObjectForKey("label") as String
-        self._type = iQFieldType(rawValue: (aDecoder.decodeObjectForKey("type") as Int))!
-        self._required = aDecoder.decodeObjectForKey("required") as Bool
-        self.value = aDecoder.decodeObjectForKey("value")?
-        self._options = aDecoder.decodeObjectForKey("options") as [String]?
+        self._label = aDecoder.decodeObjectForKey("label") as! String
+        self._type = iQFieldType(rawValue: (aDecoder.decodeObjectForKey("type") as! Int))!
+        self._required = aDecoder.decodeObjectForKey("required") as! Bool
+        self.value = aDecoder.decodeObjectForKey("value")
+        self._options = aDecoder.decodeObjectForKey("options") as! [String]?
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
@@ -57,7 +57,7 @@ class iQField: NSObject, NSCoding {
             println("has value")
             if self._type == .Email {
                 let regEx: String = iQField.EMAIL_REGEX()
-                if !(NSPredicate(format: "SELF MATCHES %@", regEx)!.evaluateWithObject(self.value! as String)) {
+                if !(NSPredicate(format: "SELF MATCHES %@", regEx).evaluateWithObject(self.value! as! String)) {
                     isValid = false
                 }
             }

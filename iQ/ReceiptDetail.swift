@@ -7,7 +7,7 @@ class ReceiptDetail: iQTableViewController {
     
     init(receipt: NSManagedObject?) {
         var fields: iQFields
-        if receipt != nil { fields = iQFields(data: receipt!.valueForKey("data") as NSData) }
+        if receipt != nil { fields = iQFields(data: receipt!.valueForKey("data") as! NSData) }
         else {
             fields = iQFields()
             fields.append("Forename", type: .Text, required: true)
@@ -22,9 +22,9 @@ class ReceiptDetail: iQTableViewController {
         if receipt != nil { self.receipt = receipt }
     }
     
-    override init(style: UITableViewStyle) { super.init(style: style) }
+    //override init(style: UITableViewStyle) { super.init(style: style) }
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) { super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil) }
+    //override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) { super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil) }
     
     required init(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 

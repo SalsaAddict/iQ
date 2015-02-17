@@ -33,13 +33,13 @@ class iQTests: XCTestCase {
         var bademails = [ "", "@x@", "jonathan@bitwix!.com", " ajc @xx.com ", "x@.com" ]
         for email in okemails
         {
-            let result = NSPredicate(format: "SELF MATCHES %@", regEx)!.evaluateWithObject( email )
+            let result = NSPredicate(format: "SELF MATCHES %@", regEx).evaluateWithObject( email )
             println( "\(email) \(result)")
             XCTAssertTrue( result, "Failed on " + email )
         }
         for email in bademails
         {
-            let result = NSPredicate(format: "SELF MATCHES %@", regEx)!.evaluateWithObject( email )
+            let result = NSPredicate(format: "SELF MATCHES %@", regEx).evaluateWithObject( email )
             println( "\(email) \(result)")
             XCTAssertFalse( result, "Passed on " + email )
         }

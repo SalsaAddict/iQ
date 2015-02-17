@@ -7,7 +7,7 @@ class iQFields {
     init() { self._fields = [] }
     
     init(data: NSData) {
-        self._fields = NSKeyedUnarchiver.unarchiveObjectWithData(data)! as [iQField]
+        self._fields = NSKeyedUnarchiver.unarchiveObjectWithData(data)! as! [iQField]
     }
     
     func append(label: String, type: iQFieldType, required: Bool = false, value: AnyObject? = nil, options: [String]? = nil) {

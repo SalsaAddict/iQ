@@ -20,7 +20,7 @@ class iQSwitchCell: iQCell {
     
     override func assignField(inout field: iQField, showValidationErrors: Bool) {
         super.assignField(&field, showValidationErrors: showValidationErrors)
-        self.switchControl.on = field.value! as Bool
+        self.switchControl.on = field.value! as! Bool
         self.switchControl.addTarget(self, action: "setValueWithSwitch:", forControlEvents: .ValueChanged)
     }
     

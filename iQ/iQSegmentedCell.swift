@@ -31,7 +31,7 @@ class iQSegmentedCell: iQCell {
                 self.segmentedControl.insertSegmentWithTitle(field.options![index], atIndex: index, animated: true)
             }
         }
-        if field.value != nil { self.segmentedControl.selectedSegmentIndex = field.value! as Int }
+        if field.value != nil { self.segmentedControl.selectedSegmentIndex = field.value! as! Int }
         self.segmentedControl.addTarget(self, action: "setValueWithSegmentedControl:", forControlEvents: .ValueChanged)
     }
     

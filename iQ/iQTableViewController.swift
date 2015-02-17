@@ -5,18 +5,19 @@ class iQTableViewController: UITableViewController {
     var fields: iQFields!, showValidationErrors: Bool = false
     
     init(fields: iQFields) {
-        super.init()
+        super.init(style: .Plain)
         self.fields = fields
     }
     
-    override init(style: UITableViewStyle) { super.init(style: style) }
+    //override init(style: UITableViewStyle) { super.init(style: style) }
 
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) { super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil) }
+    //override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) { super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil) }
     
     required init(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     override func viewDidLoad() {
         self.tableView.separatorStyle = .None
+        self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.registerClass(iQTextCell.self, forCellReuseIdentifier: iQTextCell.reuseIdentifier)
         self.tableView.registerClass(iQEmailCell.self, forCellReuseIdentifier: iQEmailCell.reuseIdentifier)
         self.tableView.registerClass(iQNumericTextCell.self, forCellReuseIdentifier: iQNumericTextCell.reuseIdentifier)
@@ -33,12 +34,12 @@ class iQTableViewController: UITableViewController {
         var field = self.fields[indexPath.row]
         var cell: iQCell
         switch field.type {
-        case .Text: cell = tableView.dequeueReusableCellWithIdentifier(iQTextCell.reuseIdentifier, forIndexPath: indexPath) as iQTextCell
-        case .Email: cell = tableView.dequeueReusableCellWithIdentifier(iQEmailCell.reuseIdentifier, forIndexPath: indexPath) as iQEmailCell
-        case .NumericText: cell = tableView.dequeueReusableCellWithIdentifier(iQNumericTextCell.reuseIdentifier, forIndexPath: indexPath) as iQNumericTextCell
-        case .Money: cell = tableView.dequeueReusableCellWithIdentifier(iQMoneyCell.reuseIdentifier, forIndexPath: indexPath) as iQMoneyCell
-        case .Segmented: cell = tableView.dequeueReusableCellWithIdentifier(iQSegmentedCell.reuseIdentifier, forIndexPath: indexPath) as iQSegmentedCell
-        case .Switch: cell = tableView.dequeueReusableCellWithIdentifier(iQSwitchCell.reuseIdentifier, forIndexPath: indexPath) as iQSwitchCell
+        case .Text: cell = tableView.dequeueReusableCellWithIdentifier(iQTextCell.reuseIdentifier, forIndexPath: indexPath) as! iQTextCell
+        case .Email: cell = tableView.dequeueReusableCellWithIdentifier(iQEmailCell.reuseIdentifier, forIndexPath: indexPath) as! iQEmailCell
+        case .NumericText: cell = tableView.dequeueReusableCellWithIdentifier(iQNumericTextCell.reuseIdentifier, forIndexPath: indexPath) as! iQNumericTextCell
+        case .Money: cell = tableView.dequeueReusableCellWithIdentifier(iQMoneyCell.reuseIdentifier, forIndexPath: indexPath) as! iQMoneyCell
+        case .Segmented: cell = tableView.dequeueReusableCellWithIdentifier(iQSegmentedCell.reuseIdentifier, forIndexPath: indexPath) as! iQSegmentedCell
+        case .Switch: cell = tableView.dequeueReusableCellWithIdentifier(iQSwitchCell.reuseIdentifier, forIndexPath: indexPath) as! iQSwitchCell
         default: abort() // TODO: Remove
         }
         cell.assignField(&field, showValidationErrors: self.showValidationErrors)

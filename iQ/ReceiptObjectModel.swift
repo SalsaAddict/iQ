@@ -26,7 +26,7 @@ class ReceiptObjectModel: NSManagedObjectModel {
     }
     
     class func context() -> NSManagedObjectContext {
-        return (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
+        return (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
     }
     
     class func entityDescription(name: String) -> NSEntityDescription {

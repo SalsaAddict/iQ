@@ -41,27 +41,27 @@ class Home: UITableViewController, NSFetchedResultsControllerDelegate {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let info = self.fetchedResultsController.sections![section] as NSFetchedResultsSectionInfo
+        let info = self.fetchedResultsController.sections![section] as! NSFetchedResultsSectionInfo
         return info.numberOfObjects
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ReceiptCell") as HomeCell
-        let item = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
+        let cell = tableView.dequeueReusableCellWithIdentifier("ReceiptCell") as! HomeCell
+        let item = self.fetchedResultsController.objectAtIndexPath(indexPath) as! NSManagedObject
         let dateFormatter: NSDateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd MMM yyyy HH:mm"
         cell.textLabel?.text = item.valueForKey("title") as? String
-        cell.detailTextLabel?.text = dateFormatter.stringFromDate(item.valueForKey("dateUpdated") as NSDate)
+        cell.detailTextLabel?.text = dateFormatter.stringFromDate(item.valueForKey("dateUpdated") as! NSDate)
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let item = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
+        let item = self.fetchedResultsController.objectAtIndexPath(indexPath) as! NSManagedObject
         self.navigationController?.pushViewController(ReceiptDetail(receipt: item), animated: true)
     }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        let item = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
+        let item = self.fetchedResultsController.objectAtIndexPath(indexPath) as! NSManagedObject
         ReceiptObjectModel.context().deleteObject(item)
         ReceiptObjectModel.context().save(nil)
     }
